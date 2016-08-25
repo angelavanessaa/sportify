@@ -47,3 +47,9 @@ end
 
 #devise for login, sign up, etc
 gem 'devise'
+
+gem 'figaro'
+
+gem 'omniauth'
+
+gem 'omniauth-facebook'
