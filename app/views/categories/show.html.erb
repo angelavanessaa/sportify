@@ -1,8 +1,8 @@
-<a href="javascript:history.back()">Go Back</a><br>
-
+<a href="/admin">Admin Page</a><br>
 <%= @categories.name %><br>
 
 <%= button_to "Edit", edit_category_path, :method => :get %>
 <%= button_to "Delete", @categories, :method => :delete %>
 
-<br><%= link_to 'Add a Product', new_product_path %><br>
+<%= link_to 'See all products', category_products_path(@categories.id) %>
+<br><%= link_to 'Add a Product', new_category_product_path(@categories) %>

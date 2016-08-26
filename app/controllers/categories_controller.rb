@@ -35,10 +35,7 @@ before_action :set_category, only: [:update, :destroy, :show, :edit]
 
   def destroy
     @categories.destroy
-    respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to admin_path
   end
 
 
