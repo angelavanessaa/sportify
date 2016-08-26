@@ -47,3 +47,10 @@ end
 
 #devise for login, sign up, etc
 gem 'devise'
+
+#image uploader
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
+gem 'mini_magick'
+
+gem 'fog'

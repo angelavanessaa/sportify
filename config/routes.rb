@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
- 
-  root to: 'home#index'
 
-  # devise_for :users
-=======
   root 'home#index'
 
-  devise_for :users
-  resources :users
->>>>>>> master
-  
+  scope '/admin' do
+    resources :products
+  end
+
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.

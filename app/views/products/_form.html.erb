@@ -1,0 +1,6 @@
+<%= form_for @products do |f| %>
+<%= f.text_field :name, placeholder: 'Name' %><br> 
+<%= f.text_field :description, placeholder: 'Description' %><br>
+<%= f.file_field :avatars, multiple: true %><br>
+<%= f.submit 'Add Product' %>
+<% end %>
