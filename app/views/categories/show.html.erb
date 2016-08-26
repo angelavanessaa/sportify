@@ -1,0 +1,14 @@
+<a href="/admin">Admin Page</a><br>
+<%= @categories.name %><br>
+<% @categories.products.all.each do |x| %>
+	<%= x.name %><br>
+	<%= x.description %><br>
+	<%= image_tag (x.avatars[0]) %><br><br>
+<% end %>
+
+<br><br>
+<%= button_to "Edit", edit_category_path, :method => :get %>
+<%= button_to "Delete", @categories, :method => :delete %>
+
+<%= link_to 'See all products', category_products_path(@categories.id) %>
+<br><%= link_to 'Add a Product', new_category_product_path(@categories) %>

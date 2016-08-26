@@ -2,18 +2,27 @@ class ProductsController < ApplicationController
 before_action :set_product, only: [:update, :destroy, :show, :edit]
 
   def new
-  	@products = Product.new
+  	# @products = Product.new
+    @categories = Category.find(params[:category_id])
+    @products = @categories.products.build
   end
 
   def create
-  	@products = Product.new(product_params)
-  	if @products.save
-  		redirect_to(products_path, flash:{ notice: "You have added in a new product!"})
-  	else
-  		flash[:alert] = "Error adding product."
-  		render :new
-  	end
+  	# @products = Product.new(product_params)
+  	# if @products.save
+  	# 	redirect_to category_products_path
+  	# else
+  	# 	render :new
+  	# end
+    @categories = Category.find(params[:category_id])
+    @products = @categories.products.build(product_params)
+    if @products.save
+      redirect_to category_products_path
+    else
+      render :new
+    end
   end
+
 
   def index
     @products = Product.all
@@ -28,7 +37,7 @@ before_action :set_product, only: [:update, :destroy, :show, :edit]
   def update
   	@products.update(product_params)
   	if @products.save
-  		redirect_to products_path
+  		redirect_to category_products_path
     else
       render :edit
   	end

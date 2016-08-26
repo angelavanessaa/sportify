@@ -2,10 +2,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  scope '/admin' do
-    resources :products
-  end
-
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -17,6 +13,11 @@ Rails.application.routes.draw do
   # Example of regular route:
   get 'admin' => 'home#admin', as: 'admin'
 
+  scope '/admin' do  
+    resources :categories do
+      resources :products
+    end
+  end
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
