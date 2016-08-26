@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'products/new'
 
   get 'products/create'
@@ -9,11 +10,11 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  devise_for :users
-  resources :users
   resources :products, only: [:new, :create, :update, :destroy]
 
-  
+
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get 'admin' => 'home#admin', as: 'admin'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
