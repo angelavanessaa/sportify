@@ -1,0 +1,8 @@
+<a href="javascript:history.back()">Go Back</a><br>
+
+hello, create a new category here.
+
+<%= form_for @categories do |f| %>
+	<%= f.text_field :name, placeholder: 'Name' %><br> 
+	<%= f.submit 'Add Category' %>
+<% end %>

@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+before_action :set_category, only: [:update, :destroy, :show, :edit]
 
   def index
     @categories = Category.all
@@ -9,23 +10,26 @@ class CategoriesController < ApplicationController
   end
 
   def create
-  	@categories = admin.categories.new(category_params)
-  	if categories.save
-  		redirect_to root_path
+  	@categories = Category.new(category_params)
+  	if @categories.save
+  		redirect_to categories_path
   	else
-  	    render :new
+      render :new
   	end
   end
 
+  def edit
+  end
+
+  def show
+  end
+
   def update
-  	respond_to do |format|
-  		if @categories.update(category_params)
-  			format.html {redirect to @categories, notice: 'Category was sucessfully updated.'}
-  			format.json { render :show, status: :ok, location: @categories }
-      else
-        format.html { render :edit }
-        format.json { render json: @categories.errors, status: :unprocessable_entity }
-      end
+    @categories.update(category_params)
+    if @categories.save
+      redirect_to categories_path
+    else
+      render :edit
     end
   end
 
@@ -36,7 +40,7 @@ class CategoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
-end
+
 
 private
     # Use callbacks to share common setup or constraints between actions.
@@ -46,9 +50,7 @@ private
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(
-        :user_id, :name, {avatars:[]}  
-        )
+      params.require(:category).permit(:name)
       # if want to create post, it need :user_id, :place_name, :place_type, :address, 
         # :bedroom, :bath, :amenity, :cost_per_night,:description   validation
     end
