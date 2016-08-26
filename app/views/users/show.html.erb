@@ -4,3 +4,11 @@
 <%= link_to 'Back', users_path %>
 
 hhahahahhahaa
+
+Place profile image
+
+All details about this user
+
+<% if current_user %>
+	Hello <%= current_user.name %>
+<% end %>

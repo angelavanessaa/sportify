@@ -16,6 +16,47 @@ ActiveRecord::Schema.define(version: 20160825092828) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chatboxes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "chatboxes", ["user_id"], name: "index_chatboxes_on_user_id", using: :btree
+
+  create_table "posts", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "product_id"
+    t.integer  "chatbox_id"
+    t.integer  "vote_id"
+    t.integer  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "posts", ["chatbox_id"], name: "index_posts_on_chatbox_id", using: :btree
+  add_index "posts", ["product_id"], name: "index_posts_on_product_id", using: :btree
+  add_index "posts", ["vote_id"], name: "index_posts_on_vote_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.integer  "category_id"
+    t.string   "name"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -47,4 +88,16 @@ ActiveRecord::Schema.define(version: 20160825092828) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
+  create_table "votes", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "votes", ["post_id"], name: "index_votes_on_post_id", using: :btree
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
+
+  add_foreign_key "chatboxes", "users"
+  add_foreign_key "products", "categories"
 end
