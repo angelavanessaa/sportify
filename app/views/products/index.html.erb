@@ -1,0 +1,5 @@
+<% @products.each do |x| %>
+	<%= link_to "#{x.name}", product_path(x) %><br>
+	<%= x.description %><br>
+	<%= image_tag (x.avatars[0]) %><br><br>
+<% end %>

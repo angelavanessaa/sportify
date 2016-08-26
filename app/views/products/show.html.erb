@@ -1,0 +1,6 @@
+<%= @products.name %><br>
+<%= @products.description %><br>
+<%= image_tag (@products.avatars[0]) %><br>
+
+<%= button_to "Edit Product", edit_product_path, :method => :get %>
+<%= button_to "Delete", @products, :method => :delete %>

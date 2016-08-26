@@ -1,17 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'products/new'
-
-  get 'products/create'
-
-  get 'products/update'
-
-  get 'products/destroy'
-
   root 'home#index'
 
-  resources :products, only: [:new, :create, :update, :destroy]
-
+  scope '/admin' do
+    resources :products
+  end
 
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
   resources :users

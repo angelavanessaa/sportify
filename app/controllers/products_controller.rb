@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
-before_action :set_status, only: [:update, :destroy]
-before_action :require_login
+before_action :set_product, only: [:update, :destroy, :show, :edit]
 
   def new
   	@products = Product.new
@@ -8,33 +7,44 @@ before_action :require_login
 
   def create
   	@products = Product.new(product_params)
-  	if @status.save
-  		redirect_to(@products, flash:{ notice: "You have added in a new product! "})
+  	if @products.save
+  		redirect_to(products_path, flash:{ notice: "You have added in a new product!"})
   	else
   		flash[:alert] = "Error adding product."
   		render :new
   	end
   end
 
+  def index
+    @products = Product.all
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
   def update
   	@products.update(product_params)
   	if @products.save
-  		redirect_to(@products, flash:{ notice: "You have successfully added in a product! "})
+  		redirect_to products_path
+    else
+      render :edit
   	end
   end
 
   def destroy
   	@products.destroy
-  	redirect_to root_path
+  	redirect_to admin_path
   end
 
   private
-  def set_status
+  def set_product
     @products = Product.find(params[:id])
   end
 
-  def status_params
-  	params.require(:products).permit(:category_id, :name, :description)
+  def product_params
+  	params.require(:product).permit(:category_id, :name, :description, {avatars:[]})
   end
 end
-
