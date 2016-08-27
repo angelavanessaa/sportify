@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root 'home#index'
 
-  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
-  resources :users
+
+  devise_for :users, controllers: { :omniauth_callbacks => "users/omniauth_callbacks", registrations: 'users/registrations', sessions: 'users/sessions' }
+    
+  resources :users do
+    resources :posts, only: [:index, :show]
+  end
+
 
   resources :votes
   resources :wishlists
@@ -19,9 +26,18 @@ Rails.application.routes.draw do
 
   scope '/admin' do  
     resources :categories do
-      resources :products
+      resources :products do
+        resources :posts
+      end
     end
   end
+
+  scope '/', controller: :main do
+    get 'categories' #shows all categories
+    get 'deals' #shows all deals
+    get '/categories/:name', to: 'main#category'
+  end
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

@@ -1,0 +1,6 @@
+<%= form_for [:category, :product, @posts] do |f| %>
+	Duration start date: <%= f.date_select :start_date %><br>
+	Duration end date: <%= f.date_select :end_date %><br>
+	Price: <%= f.text_field :price, placeholder: 'Price' %><br>
+	<%= f.submit 'Create Post' %>
+<% end %>

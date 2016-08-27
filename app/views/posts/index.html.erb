@@ -1,0 +1,11 @@
+<a href="/admin">Admin Page</a><br>
+<% @posts.each do |x| %>
+	<% @products = x.product_id %>
+	<% @oreo = Product.find(@products) %>
+	<% @categories = @oreo.category_id %>
+	<%= link_to 'View Deal', category_product_post_path(@categories, @products, x) %><br>
+	Deal start date: <%= x.start_date %><br>
+	Deal end date: <%= x.end_date %><br>
+	Deal price: <%= x.price %><br>
+	<%= link_to 'See product', category_product_path(@categories, @products) %><br><br>
+<% end %>

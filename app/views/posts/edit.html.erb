@@ -1,0 +1,7 @@
+<h1> Edit your deal! </h1>
+<%= form_for @posts, url: category_product_post_path do |f| %>
+	Duration start date: <%= f.date_select :start_date %><br>
+	Duration end date: <%= f.date_select :end_date %><br>
+	Price: <%= f.text_field :price, placeholder: 'Price' %><br>
+	<%= f.submit 'Update Product' %>
+<% end %>

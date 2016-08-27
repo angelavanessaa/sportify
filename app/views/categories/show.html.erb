@@ -1,7 +1,7 @@
 <a href="/admin">Admin Page</a><br>
 <%= @categories.name %><br>
 <% @categories.products.all.each do |x| %>
-	<%= x.name %><br>
+	<%= link_to "#{x.name}", category_product_path(x.category_id, x.id) %><br>
 	<%= x.description %><br>
 	<%= image_tag (x.avatars[0]) %><br><br>
 <% end %>
