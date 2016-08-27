@@ -1,1 +1,14 @@
-show.html.erb
+<a href="/admin">Admin Page</a><br>
+
+Post start date: <%= @posts.start_date %><br>
+Post end date: <%= @posts.start_date %><br>
+Selling price: RM.<%= @posts.price %><br><br>
+Product being sold:<br>
+<% @products = @posts.product_id %>
+<% @info = Product.find(@products) %>
+<%= link_to "#{@info.name}", category_product_path(@info.category_id, @info.id) %><br>
+<%= @info.description %><br>
+<%= image_tag (@info.avatars[0]) %><br>
+
+<%= button_to "Edit Deal", edit_category_product_post_path, :method => :get %>
+<%= button_to "Delete Deal", category_product_post_path(:category, :product, @posts), :method => :delete %>

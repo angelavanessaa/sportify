@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-	<html>
-	<head>
-	  <title>Airbnb</title>
-	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-      <%= csrf_meta_tags %>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-      <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-    </head>
-
-	<body>
-		<%= render 'shared/navbar' %>
-		<%= render 'shared/message' %>
-		<div class="container main-container">
-			<%= yield %>
-		</div>
-
-	</body>
-</html>
+<a href="/admin">Admin Page</a><br>
+<% @posts.each do |x| %>
+	<% @products = x.product_id %>
+	<% @oreo = Product.find(@products) %>
+	<% @categories = @oreo.category_id %>
+	<%= link_to 'View Deal', category_product_post_path(@categories, @products, x) %><br>
+	Deal start date: <%= x.start_date %><br>
+	Deal end date: <%= x.end_date %><br>
+	Deal price: <%= x.price %><br>
+	<%= link_to 'See product', category_product_path(@categories, @products) %><br><br>
+<% end %>
