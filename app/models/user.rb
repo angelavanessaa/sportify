@@ -22,11 +22,9 @@ class User < ActiveRecord::Base
   end
 
   has_many :votes
-<<<<<<< HEAD
 
-=======
   has_many :wishlist
   has_many :products , :through => :wishlists
->>>>>>> 09715cd7a14ea6abe05db6aa63bc0d660917c6b0
+
 end
 

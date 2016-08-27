@@ -70,12 +70,10 @@ GEM
     erubis (2.7.0)
     excon (0.51.0)
     execjs (2.7.0)
-<<<<<<< HEAD
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     figaro (1.1.1)
       thor (~> 0.14)
-=======
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.38.0)
@@ -205,7 +203,6 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
->>>>>>> 09715cd7a14ea6abe05db6aa63bc0d660917c6b0
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashie (3.4.4)
@@ -336,18 +333,13 @@ DEPENDENCIES
   carrierwave!
   coffee-rails (~> 4.1.0)
   devise
-<<<<<<< HEAD
   figaro
-  jbuilder (~> 2.0)
-  jquery-rails
-  omniauth
-  omniauth-facebook
-=======
   fog
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
->>>>>>> 09715cd7a14ea6abe05db6aa63bc0d660917c6b0
+  omniauth
+  omniauth-facebook
   pg (~> 0.15)
   rails (= 4.2.6)
   sass-rails (~> 5.0)
