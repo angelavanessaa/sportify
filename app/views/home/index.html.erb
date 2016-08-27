@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <%if signed_in? %>
-                    <li><a href="/users/<%=current_user.id%>" class="page-scroll">Welcome <%=current_user.email%></a></li>
+                    <li><a href="/users/<%=current_user.id%>" class="page-scroll">Welcome <%=current_user.name%></a></li>
                     <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, method: :delete %></a></li>
                     <% else %>
                     <li>
