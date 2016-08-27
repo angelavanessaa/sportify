@@ -1,0 +1,8 @@
+<a href="/">Home</a><br><br>
+
+<% Post.all.each do |x| %>
+	Deal id: <%= x.id %><br>
+	Deal start date: <%= x.start_date %><br>
+	Deal end date: <%= x.end_date %><br>
+	Deal price: <%= x.price %><br><br>
+<% end %>
