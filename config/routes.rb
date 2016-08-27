@@ -24,7 +24,9 @@ Rails.application.routes.draw do
 
   scope '/admin' do  
     resources :categories do
-      resources :products
+      resources :products do
+        resources :posts
+      end
     end
   end
   # Example of named route that can be invoked with purchase_url(id: product.id)
