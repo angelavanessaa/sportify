@@ -8,7 +8,6 @@ Product being sold:<br>
 <% @info = Product.find(@products) %>
 <%= link_to "#{@info.name}", category_product_path(@info.category_id, @info.id) %><br>
 <%= @info.description %><br>
-<%= image_tag (@info.avatars[0]) %><br>
 
 <%= button_to "Edit Deal", edit_category_product_post_path, :method => :get %>
 <%= button_to "Delete Deal", category_product_post_path(:category, :product, @posts), :method => :delete %>
