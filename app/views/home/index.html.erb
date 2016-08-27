@@ -238,3 +238,10 @@
     </section>
 </body>
 
+<% if current_user %>
+	<%= current_user.name %>
+<% end%>
+
+Top Picks
+
+<%= Product.order(:vote_count).limit(10) %>

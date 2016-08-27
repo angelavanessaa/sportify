@@ -48,9 +48,16 @@ end
 #devise for login, sign up, etc
 gem 'devise'
 
+gem 'figaro'
+
+gem 'omniauth'
+
+gem 'omniauth-facebook'
+
 #image uploader
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 gem 'mini_magick'
 
 gem 'fog'
+
