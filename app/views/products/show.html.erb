@@ -5,3 +5,5 @@
 <%= image_tag (@products.avatars[0]) %><br>
 <%= button_to "Edit Product", edit_category_product_path, :method => :get %>
 <%= button_to "Delete", category_product_path(:category, @products), :method => :delete %>
+
+<%= button_to "Create a Post", new_category_product_post_path(:category, @products), :method => :get %>

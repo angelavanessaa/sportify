@@ -1,34 +1,34 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
 
-  # GET /posts
-  # GET /posts.json
+  def new
+    @categories = Category.find(params[:category_id])
+    @products = @categories.products.find(params[:product_id])
+    @posts = @products.posts.build
+    # @posts = Post.new
+  end
+
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to admin_path
+    else
+      render :new
+    end
+  end
+
   def index
     @posts = Post.all
 
     render json: @posts
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
   def show
     render json: @post
   end
 
-  # POST /posts
-  # POST /posts.json
-  def create
-    @post = Post.new(post_params)
 
-    if @post.save
-      render json: @post, status: :created, location: @post
-    else
-      render json: @post.errors, status: :unprocessable_entity
-    end
-  end
 
-  # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
 
@@ -39,8 +39,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post.destroy
 
@@ -54,17 +52,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:start_date, :product, :chatbox, :vote, :price)
+      params.require(:post).permit(:start_date, :end_date, :product_id, :chatbox_id, :vote_id, :price, :category_id)
     end
 end
-
-
-
-
-
-
-
-
-
-
 
