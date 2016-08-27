@@ -1,0 +1,11 @@
+<a href="/admin">Admin Page</a><br>
+<a href="javascript:history.back()">Go Back</a><br><br>
+
+<% @categories.each do |x| %>
+	<%= link_to "#{x.name}", category_path(x) %><br>
+<% end %>
+
+<br>
+<%= link_to 'See all products', category_products_path(1) %>
+<br>
+<%= link_to 'Add a Category', new_category_path %>

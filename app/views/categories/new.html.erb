@@ -1,0 +1,8 @@
+<a href="/admin">Admin Page</a><br>
+
+hello, create a new category here.
+
+<%= form_for @categories do |f| %>
+	<%= f.text_field :name, placeholder: 'Name' %><br> 
+	<%= f.submit 'Add Category' %>
+<% end %>

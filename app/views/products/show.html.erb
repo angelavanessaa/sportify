@@ -1,0 +1,7 @@
+<a href="/admin">Admin Page</a><br>
+
+<%= @products.name %><br>
+<%= @products.description %><br>
+<%= image_tag (@products.avatars[0]) %><br>
+<%= button_to "Edit Product", edit_category_product_path, :method => :get %>
+<%= button_to "Delete", category_product_path(:category, @products), :method => :delete %>
