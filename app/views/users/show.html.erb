@@ -1,17 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<!-- <% @user.wishlist.all.each do |x| %>
+<h1> My wishlist </h1>
 
- 	<% x.name %>  
+ <% @user.wishlist.all.each do |x| %>
+ 	<%= image_tag (x.avatar) %> <br>
+ 	<%= x.name %>  <br>
+ 	<%= x.description %> 
+ <%end%>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+<%= link_to 'Edit Profile', edit_user_path(@user) %> <br>
+<%= link_to 'Create Wishlist', new_wishlist_path(@user) %><br>
+Purchase History <br>
+
+<%= link_to 'Back', users_path %><br>
 
 
-%= @categories.name %><br>
-<% @categories.products.all.each do |x| %>
-	<%= x.name %><br>
-	<%= x.description %><br>
-	<%= image_tag (x.avatars[0]) %><br><br>
-<% end %>
