@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20160827095220) do
     t.string   "uid"
     t.string   "name"
     t.string   "image"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
