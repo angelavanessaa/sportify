@@ -26,7 +26,7 @@ class Users::SessionsController < Devise::SessionsController
     if current_user.admin?
       stored_location_for(resource) || admin_path
     else
-      stored_location_for(resource) || current_user
+      stored_location_for(resource) || users_path(@current_user)
     end
   end
 end
