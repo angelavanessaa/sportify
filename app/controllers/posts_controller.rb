@@ -1,17 +1,16 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
+  before_action :set_post, only: [:show, :update, :destroy, :edit]
 
   def new
-    @categories = Category.find(params[:category_id])
-    @products = @categories.products.find(params[:product_id])
+    @products = Product.find(params[:product_id])
     @posts = @products.posts.build
-    # @posts = Post.new
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      redirect_to admin_path
+    @products = Product.find(params[:product_id])
+    @posts = @products.posts.build(post_params)
+    if @posts.save
+      redirect_to category_product_post_path(:category, :product, @posts)
     else
       render :new
     end
@@ -19,40 +18,36 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-
-    render json: @posts
   end
 
   def show
-    render json: @post
   end
 
-
+  def edit
+  end
 
   def update
-    @post = Post.find(params[:id])
-
-    if @post.update(post_params)
-      head :no_content
+    @posts.update(post_params)
+    if @posts.save
+      redirect_to category_product_post_path
     else
-      render json: @post.errors, status: :unprocessable_entity
+      render :edit
     end
   end
 
   def destroy
-    @post.destroy
-
-    head :no_content
+    @posts.destroy
+    redirect_to admin_path
   end
 
   private
 
     def set_post
-      @post = Post.find(params[:id])
+      @posts = Post.find(params[:id])
     end
 
     def post_params
-      params.require(:post).permit(:start_date, :end_date, :product_id, :chatbox_id, :vote_id, :price, :category_id)
+      params.require(:post).permit(:start_date, :end_date, :product_id, :chatbox_id, :vote_id, :price)
     end
 end
 
