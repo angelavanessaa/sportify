@@ -54,10 +54,9 @@ gem 'omniauth'
 
 gem 'omniauth-facebook'
 
+#admin role
+gem 'activeadmin'
+
 #image uploader
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-
-gem 'mini_magick'
-
-gem 'fog'
+gem "paperclip", "~> 5.0.0"
 
