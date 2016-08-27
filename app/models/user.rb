@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
          #:confirmable, 
          #:omniauthable
   has_many :votes
-  has_many :wishlist
+  has_many :wishlists
   has_many :products , :through => :wishlists
 end

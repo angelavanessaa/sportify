@@ -2,7 +2,7 @@
 
 <h1> My wishlist </h1>
 
- <% @user.wishlist.all.each do |x| %>
+ <% @user.wishlists.all.each do |x| %>
  	<%= image_tag (x.avatar) %> <br>
  	<%= x.name %>  <br>
  	<%= x.description %> 
