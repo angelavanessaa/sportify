@@ -11,6 +11,12 @@ html {
 }
 body {
   margin: 0;
+    min-height: 400px;
+   margin-bottom: 100px;
+   clear: both;
+   overflow: scroll;
+   padding-top: 65px; 
+ 
 }
 article,
 aside,
@@ -26,6 +32,7 @@ nav,
 section,
 summary {
   display: block;
+  clear:both;
 }
 audio,
 canvas,

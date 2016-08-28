@@ -55,7 +55,7 @@
                     <%if signed_in? %>
 
                     
-                    <li><a class="page-scroll"><%= link_to "Welcome <%= current_user.email %>", user_path(current_user), style: 'color:gray' %><%= current_user.email %></li>
+                    <li><a class="page-scroll"><%= link_to "Welcome", user_path(current_user), style: 'color:gray' %><%= current_user.email %></li>
 
             
 
@@ -70,23 +70,6 @@
                     </li>
                     <%end%>
 
-                  <% if params[:controller] == "home" && params[:action] == "index" %>
-                          <li>
-                              <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
-                          </li>
-                          <li>
-                              <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
-                          </li>
-                      <% elsif params[:controller] == "users/sessions" && params[:action] == "new"%> 
-                      <li>
-                              <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
-                      </li>
-                      <% else params[:controller] == "users/registrations" && params[:action] == "new" %> 
-                
-                       <li>
-                              <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
-                      </li>
-               <%end%>
 
                 </ul>
             </div>
@@ -138,7 +121,7 @@
  
 
 <%= yield %>
-
+</body>
 
 <footer>
     <div class="footer" id="footer" style="">
@@ -231,5 +214,5 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-</body>
+
 </html>

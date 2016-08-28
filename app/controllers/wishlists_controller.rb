@@ -33,7 +33,7 @@ class WishlistsController < ApplicationController
 
 	private 
 	def wishlist_params
-		params.require(:wishlist).permit(:name, :votes_count, :desription, {avatar: []})
+		params.require(:wishlist).permit(:name, :votes_count, :desription, :avatar)
 	end  
 
 	def set_wishlist
