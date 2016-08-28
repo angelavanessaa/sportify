@@ -1,6 +1,16 @@
 class UsersController < ApplicationController
 #   # before_action :set_user, only: [:show, :edit, :update]
+	def index 
+		@users = User.all
+	end 
 
+	def show
+	end 
+
+	def edit
+	end 
+
+	
 #   # GET /users
 #   # GET /users.json
 #   def index
@@ -74,6 +84,7 @@ class UsersController < ApplicationController
       # params.fetch(:user, {})
     end
 
+ 
 #     # Never trust parameters from the scary internet, only allow the white list through.
 #     def user_params
 #       params.fetch(:user, {})

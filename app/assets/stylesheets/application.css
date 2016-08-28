@@ -142,10 +142,20 @@
 	border-top: 1px solid #DDDDDD;
 	padding-top: 10px;
 	padding-bottom: 10px;
+
 }
 .footer-bottom p.pull-left {
 	padding-top: 6px;
 }
 .payments {
 	font-size: 1.5em;	
+}
+
+.navbar-default .nav > li > a, .navbar-default .nav > li > a:focus{
+	color:gray;
+}
+
+.adjust-footer-container {
+	margin-bottom: 400px;
+	margin-top: -130px;
 }
