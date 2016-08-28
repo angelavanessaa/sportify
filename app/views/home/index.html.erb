@@ -1,6 +1,5 @@
 <body id="page-top">
 
-
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -43,9 +42,14 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">##</h1>
                 <hr>
-                <p>##</p>
+                    <div class="carousel">
+                      <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 1" />
+                      <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 2" />
+                      <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 3" />
+                      <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 4" />
+                      <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 5" />
+                    </div>
                 <!-- <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a> -->
             </div>
         </div>
@@ -55,13 +59,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
+                    <!-- <h2 class="section-heading">We've got what you need!</h2> -->
+         <!--            <a class="btn-5" href="#">Slice</a> -->
+
+                <a href="/categories" class="btn" id="custom" style="text-decoration: none;">SEE ALL CATEGORIES</a>
                     <hr class="light">
-                    <p class="text-faded">#</p>
+                <a href="/deals" class="btn" id="custom" style="text-decoration: none;">SEE ALL DEALS</a>
+
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <section id="services">
         <div class="container">
@@ -239,6 +249,7 @@
 <% if current_user %>
     <%= current_user.name %>
 <% end%>
+
 
 Top Picks
 
