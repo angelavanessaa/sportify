@@ -52,7 +52,9 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <%if signed_in? %>
-                    <li><a class="page-scroll" style="color:gray;"> Welcome <%=current_user.email%></li>
+
+                    
+                    <li><a class="page-scroll"><%= link_to "Welcome", user_path(current_user), style: 'color:gray;' %><%= current_user.email %></li>
                     <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, style: 'color:gray;' , method: :delete %></li>
                     <% else %>
                     <li>
