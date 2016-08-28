@@ -13,8 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20160827230757) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -141,6 +143,8 @@ ActiveRecord::Schema.define(version: 20160827230757) do
     t.integer "user_id"
     t.integer "product_id"
     t.integer "votes_count", default: 0
+    t.string  "avatar"
+    t.string  "description"
   end
 
   add_foreign_key "chatboxes", "users"

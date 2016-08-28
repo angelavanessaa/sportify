@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<h1> My wishlist </h1>
 
-hhahahahhahaa
+ <% @user.wishlists.all.each do |x| %>
+ 	<%= image_tag (x.avatar) %> <br>
+ 	<%= x.name %>  <br>
+ 	<%= x.description %> 
+ <%end%>
 
-Place profile image
 
-All details about this user
 
-<% if current_user %>
-	Hello <%= current_user.name %>
-<% end %>
+<%= link_to 'Edit Profile', edit_user_path(@user) %> <br>
+<%= link_to 'Create Wishlist', new_wishlist_path(@user) %><br>
+Purchase History <br>
+
+<%= link_to 'Back', users_path %><br>
+
