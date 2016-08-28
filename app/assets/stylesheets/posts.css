@@ -1,0 +1,135 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+
+
+/*navbar*/
+
+$nav-height: 3em;
+$nav-color: #bbb;
+$nav-background: #0DA2D4;
+
+
+.navbar-fixed {
+  position: fixed;
+  top: -($nav-height);
+}
+
+
+/*----------------------
+  $NAVBAR
+    basic navbar styling
+  ----------------------*/
+
+nav2 {
+  width: 100%;
+  color: $nav-color;
+  background: $nav-background;
+  font-weight: bold;
+  letter-spacing: 0.025em;
+}
+
+nav2 ul {
+  text-align: center;
+  margin: 0; 
+  }
+
+
+nav2 ul li {
+ display: inline-block;
+ padding: 0 10em;
+ line-height: 3em;
+}
+
+nav2 ul li:hover {
+  background: #00939C;
+}
+
+
+/*----------------------
+  $BODY
+  ----------------------*/
+
+/*body {
+  background: #0B6AD4;
+}
+*/
+/*----------------------
+  $MISC
+  ----------------------*/
+
+.filler {
+  width: 1px;
+  height: 200px;
+}
+
+.two {
+  height: 3000px;
+}
+
+.effect-shadow {
+	box-shadow: 0 6px 6px -6px #777;
+}
+
+.border-bottom {
+ 	border-bottom:1px 
+  	solid #EBF0E9;
+}
+
+#center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}

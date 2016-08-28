@@ -11,9 +11,21 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show]
   end
 
+  # resources :users do  
+  #   resources :categories do
+  #     resources :products do
+  #       resources :posts, only: [:index, :show]
+  #     end
+  #   end
+  # end
 
-  resources :votes
-  resources :wishlists
+  
+
+
+  resources :wishlists do
+      resources :votes, only: [:create]
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

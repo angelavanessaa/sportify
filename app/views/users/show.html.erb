@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+
+<%= link_to 'Edit', edit_user_path(current_user) %> |
+<%= link_to 'Back', users_path %>
+
 <h1> My wishlist </h1>
 
 <% if current_user.wishlists.any? %>
@@ -11,6 +15,7 @@
  <%else%>
  <h2>You don't have any wishlist. Create one! </h2>
  <%end%>
+
 
 
 

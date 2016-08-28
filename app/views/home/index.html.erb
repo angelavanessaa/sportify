@@ -1,61 +1,29 @@
-<body id="page-top">
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="/">Sportify</a>
-            </div>
-            <div>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                        <button type="submit" class="btn btn-primary btn-m page-scroll">Submit</button>
-                </form>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <%if signed_in? %>
-                    <li><a href="/users/<%=current_user.id%>" class="page-scroll">Welcome <%=current_user.name%></a></li>
-                    <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, method: :delete %></a></li>
-                    <% else %>
-                    <li>
-                        <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
-                    </li>
-                    <%end%>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
 
     <header>
         <div class="header-content">
             <div class="header-content-inner">
+                <!-- <h1 id="homeHeading">Escape the ordinary.</h1> -->
                 <hr>
+        
+            <!--    
                     <div class="carousel">
                       <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 1" />
+
                       <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 2" />
+
                       <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 3" />
+
                       <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 4" />
+                      
                       <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 5" />
-                    </div>
+                    </div> -->
+
                 <!-- <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a> -->
             </div>
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
+ <!--    <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -69,15 +37,18 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 
-    <section id="services">
-        <div class="container">
+     <section class="no-padding" id="portfolio">
+    <div class="container">
+
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">How our site works!</h2>
+
+                    <h2 class="section-heading">Product Category</h2>
+
                     <hr class="primary">
                 </div>
             </div>
@@ -117,31 +88,38 @@
     </section>
 
     <section class="no-padding" id="portfolio">
-    <div class="container-fluid">
+        <div class="container-fluid">
             <div class="row no-gutter popup-gallery">
                 <div class="col-lg-4 col-sm-6">
-                    <a href="/categories/yoga" class="portfolio-box">
-                        <img src="http://stayingintouch.com.au/wp-content/uploads/2014/10/Volcano.jpg" class="img-responsive" alt="">
+                    <a href="/categories/cycling" class="portfolio-box">
+                        <img src="https://scontent-kul1-1.xx.fbcdn.net/v/t1.0-9/14089200_104624843326690_2604942246767726169_n.jpg?oh=11f82903303859ccdd71ae9e11221ee0&oe=5848252B" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
+
+                                    Cycling
+
                                     <% @first = Category.first %>
                                     <% if @first.present? %>
                                         <%= @first.name %>
                                     <% else %>
                                         <p> No Category </p>
                                     <% end %>
+
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
+
                 <div class="col-lg-4 col-sm-6">
-                    <a href="/categories/KungFu" class="portfolio-box">
-                        <img src="http://stayingintouch.com.au/wp-content/uploads/2014/10/Volcano.jpg" class="img-responsive" alt="">
+
+                    <a href="/categories/karate" class="portfolio-box">
+                        <img src="https://scontent-kul1-1.xx.fbcdn.net/v/t1.0-9/14067430_104624826660025_4024628050948353435_n.jpg?oh=4f95f6cc696e1082bf9a304e1a02ca19&oe=583BA6B0" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
+                                    Badminton
                                     <% @second = Category.second %>
                                     <% if @second.present? %>
                                         <%= @second.name %>
@@ -153,12 +131,15 @@
                         </div>
                     </a>
                 </div>
+
                 <div class="col-lg-4 col-sm-6">
-                    <a href="/categories/cycling" class="portfolio-box">
-                        <img src="http://stayingintouch.com.au/wp-content/uploads/2014/10/Volcano.jpg" class="img-responsive" alt="">
+                    <a href="/categories/badminton" class="portfolio-box">
+                        <img src="https://scontent-kul1-1.xx.fbcdn.net/v/t1.0-9/14117867_104624883326686_2730649211397055248_n.jpg?oh=292e1e0d13cd88219290295d9955c711&oe=584B6D1F" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
+                                    Running
+
                                     <% @third = Category.third %>
                                     <% if @third.present? %>
                                         <%= @third.name %>
@@ -170,12 +151,15 @@
                         </div>
                     </a>
                 </div>
+
+
                 <div class="col-lg-4 col-sm-6">
-                    <a href="/categories/basketball" class="portfolio-box">
-                        <img src="http://stayingintouch.com.au/wp-content/uploads/2014/10/Volcano.jpg" class="img-responsive" alt="">
+                    <a href="/categories/cycling" class="portfolio-box">
+                        <img src="https://scontent-kul1-1.xx.fbcdn.net/v/t1.0-9/14080060_104624879993353_1827760821563983199_n.jpg?oh=8e17ef77dfef3c78cc925bbd3794f9c6&oe=58471234" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
+                                    Yoga
                                     <% @fourth = Category.fourth %>
                                     <% if @fourth.present? %>
                                         <%= @fourth.name %>
@@ -187,12 +171,14 @@
                         </div>
                     </a>
                 </div>
+
                 <div class="col-lg-4 col-sm-6">
-                    <a href="/categories/badminton" class="portfolio-box">
-                        <img src="http://stayingintouch.com.au/wp-content/uploads/2014/10/Volcano.jpg" class="img-responsive" alt="">
+                    <a href="/categories/karate" class="portfolio-box">
+                        <img src="https://scontent-kul1-1.xx.fbcdn.net/v/t1.0-9/14142028_104624866660021_3940458258171649009_n.jpg?oh=ee77511a75d2085b763f114bd638494b&oe=58432970" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
+                                    Motorsport
                                     <% @fifth = Category.fifth %>
                                     <% if @fifth.present? %>
                                         <%= @fifth.name %>
@@ -204,12 +190,14 @@
                         </div>
                     </a>
                 </div>
+
                 <div class="col-lg-4 col-sm-6">
-                    <a href="/categories/soccer" class="portfolio-box">
-                        <img src="http://stayingintouch.com.au/wp-content/uploads/2014/10/Volcano.jpg" class="img-responsive" alt="">
+                    <a href="/categories/badminton" class="portfolio-box">
+                        <img src="https://scontent-kul1-1.xx.fbcdn.net/v/t1.0-9/14089020_104624839993357_898840997586950791_n.jpg?oh=2e9b034feac66fdafe050d793128cbea&oe=583F8BAA" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
+                                    Golf
                                     <% @sixth = Category.last %>
                                     <% if @sixth.present? && @sixth.name != @first.name %>
                                         <%= @sixth.name %>
@@ -221,9 +209,55 @@
                         </div>
                     </a>
                 </div>
+
             </div>
         </div>
     </section>
+<!-- 
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">At Your Service</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
+                        <h3>Sturdy Templates</h3>
+                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
+                        <h3>Ready to Ship</h3>
+                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
+                        <h3>Up to Date</h3>
+                        <p class="text-muted">We update dependencies to keep things fresh.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
+                        <h3>Made with Love</h3>
+                        <p class="text-muted">You have to make your websites with love these days!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ -->
+   
 
     <section id="contact">
         <div class="container">
@@ -247,7 +281,7 @@
 </body>
 
 <% if current_user %>
-    <%= current_user.name %>
+	<%= current_user.name %>
 <% end%>
 
 
