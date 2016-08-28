@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20160827230757) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
     t.text     "body"
@@ -49,7 +48,6 @@ ActiveRecord::Schema.define(version: 20160827230757) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
-
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -117,9 +115,9 @@ ActiveRecord::Schema.define(version: 20160827230757) do
     t.datetime "updated_at",                             null: false
     t.string   "provider"
     t.string   "uid"
-    t.boolean  "admin",                  default: false
     t.string   "name"
     t.string   "image"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
