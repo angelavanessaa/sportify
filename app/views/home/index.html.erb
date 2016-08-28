@@ -115,7 +115,12 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    YOGA
+                                    <% @first = Category.first %>
+                                    <% if @first.present? %>
+                                        <%= @first.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +132,12 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    KARATE
+                                    <% @second = Category.second %>
+                                    <% if @second.present? %>
+                                        <%= @second.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +149,12 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    BADMINTON
+                                    <% @third = Category.third %>
+                                    <% if @third.present? %>
+                                        <%= @third.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +166,12 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    FOOTBALL
+                                    <% @fourth = Category.fourth %>
+                                    <% if @fourth.present? %>
+                                        <%= @fourth.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +183,12 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    CYCLING
+                                    <% @fifth = Category.fifth %>
+                                    <% if @fifth.present? %>
+                                        <%= @fifth.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +200,12 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
-                                    KUNG FU
+                                    <% @sixth = Category.last %>
+                                    <% if @sixth.present? && @sixth.name != @first.name %>
+                                        <%= @sixth.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
                                 </div>
                             </div>
                         </div>
