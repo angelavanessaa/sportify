@@ -56,10 +56,10 @@
                     <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, style: 'color:gray;' , method: :delete %></li>
                     <% else %>
                     <li>
-                        <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
+                        <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path, style: 'color:gray' %></a>
                     </li>
                     <li>
-                        <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
+                        <a class="page-scroll" ><%=link_to "Login", new_user_session_path, style: 'color:gray' %></a>
                     </li>
                     <%end%>
                 </ul>
@@ -70,7 +70,7 @@
 
     <nav2 id="navbar">
       <ul>
-        <li><%= link_to "DEALS", user_posts_path(current_user) %></li>
+        <li>"DEALS"</li>
         <li><%= link_to "WISHLISTS", wishlists_path %></li>
       </ul>
     </nav2>
