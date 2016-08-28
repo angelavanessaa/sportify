@@ -54,6 +54,6 @@ before_action :set_product, only: [:update, :destroy, :show, :edit]
   end
 
   def product_params
-  	params.require(:product).permit(:category_id, :name, :description, {avatars:[]})
+  	params.require(:product).permit(:category_id, :name, :description,:avatar)
   end
 end

@@ -2,6 +2,5 @@
 <%= form_for @products, url: category_product_path do |f| %>
 	<%= f.text_field :name, placeholder: 'Name' %><br> 
 	<%= f.text_field :description, placeholder: 'Description' %><br>
-	<%= f.file_field :avatars, multiple: true %><br>
 	<%= f.submit 'Update Product' %>
 <% end %>
