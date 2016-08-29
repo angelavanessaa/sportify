@@ -115,9 +115,9 @@ ActiveRecord::Schema.define(version: 20160829030547) do
     t.datetime "updated_at",                             null: false
     t.string   "provider"
     t.string   "uid"
-    t.boolean  "admin",                  default: false
     t.string   "name"
     t.string   "image"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
