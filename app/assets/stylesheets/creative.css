@@ -3,6 +3,19 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+.carousel {
+  width:800px;
+  height: 300px;
+  display: relative;
+  margin-left: auto;
+  margin-right: auto 
+}
+.carousel img {
+  display: hidden; /* hide images until carousel prepares them */
+  cursor: pointer; /* not needed if you wrap carousel items in links */
+  height: 180%;
+}
+
 html,
 body {
   height: 100%;
@@ -290,6 +303,7 @@ header .header-content .header-content-inner p {
   padding-right: 0;
   padding-left: 0;
 }
+
 .btn-default {
   color: #222222;
   background-color: white;
@@ -417,6 +431,14 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+
 .well {
   display: block;
+
+
+#custom {
+  color: #F05F40;
+  background-color: white;
+  border-radius: 0px;
+  width: 200px;
 }

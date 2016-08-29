@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
   end
 
   has_many :votes
+  has_many :wishlists
 
-  has_many :wishlist
   has_many :products , :through => :wishlists
 
 end

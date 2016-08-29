@@ -1,9 +1,23 @@
+
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Escape the ordinary.</h1>
+                <!-- <h1 id="homeHeading">Escape the ordinary.</h1> -->
                 <hr>
-                <p></p>
+        
+            <!--    
+                    <div class="carousel">
+                      <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 1" />
+
+                      <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 2" />
+
+                      <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 3" />
+
+                      <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 4" />
+                      
+                      <img src="https://s-media-cache-ak0.pinimg.com/564x/8d/31/f2/8d31f2962f40be91b68ef9f06fd151f4.jpg" alt="Image 5" />
+                    </div> -->
+
                 <!-- <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a> -->
             </div>
         </div>
@@ -13,17 +27,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
+                    <!-- <h2 class="section-heading">We've got what you need!</h2> -->
+         <!--            <a class="btn-5" href="#">Slice</a> -->
+
+                <a href="/categories" class="btn" id="custom" style="text-decoration: none;">SEE ALL CATEGORIES</a>
                     <hr class="light">
-                    <p class="text-faded">#</p>
+                <a href="/deals" class="btn" id="custom" style="text-decoration: none;">SEE ALL DEALS</a>
+
                 </div>
             </div>
         </div>
     </section> -->
 
 
+
      <section class="no-padding" id="portfolio">
     <div class="container">
+
             <div class="row">
                 <div class="col-lg-12 text-center">
 
@@ -76,7 +96,16 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
+
                                     Cycling
+
+                                    <% @first = Category.first %>
+                                    <% if @first.present? %>
+                                        <%= @first.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
+
                                 </div>
                             </div>
                         </div>
@@ -84,12 +113,19 @@
                 </div>
 
                 <div class="col-lg-4 col-sm-6">
+
                     <a href="/categories/karate" class="portfolio-box">
                         <img src="https://scontent-kul1-1.xx.fbcdn.net/v/t1.0-9/14067430_104624826660025_4024628050948353435_n.jpg?oh=4f95f6cc696e1082bf9a304e1a02ca19&oe=583BA6B0" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
                                     Badminton
+                                    <% @second = Category.second %>
+                                    <% if @second.present? %>
+                                        <%= @second.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
                                 </div>
                             </div>
                         </div>
@@ -103,6 +139,13 @@
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
                                     Running
+
+                                    <% @third = Category.third %>
+                                    <% if @third.present? %>
+                                        <%= @third.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
                                 </div>
                             </div>
                         </div>
@@ -117,6 +160,12 @@
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
                                     Yoga
+                                    <% @fourth = Category.fourth %>
+                                    <% if @fourth.present? %>
+                                        <%= @fourth.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
                                 </div>
                             </div>
                         </div>
@@ -130,6 +179,12 @@
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
                                     Motorsport
+                                    <% @fifth = Category.fifth %>
+                                    <% if @fifth.present? %>
+                                        <%= @fifth.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
                                 </div>
                             </div>
                         </div>
@@ -143,6 +198,12 @@
                             <div class="portfolio-box-caption-content">
                                 <div class="project-name">
                                     Golf
+                                    <% @sixth = Category.last %>
+                                    <% if @sixth.present? && @sixth.name != @first.name %>
+                                        <%= @sixth.name %>
+                                    <% else %>
+                                        <p> No Category </p>
+                                    <% end %>
                                 </div>
                             </div>
                         </div>
@@ -222,6 +283,7 @@
 <% if current_user %>
 	<%= current_user.name %>
 <% end%>
+
 
 Top Picks
 

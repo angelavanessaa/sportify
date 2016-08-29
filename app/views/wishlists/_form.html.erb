@@ -2,8 +2,14 @@
 <div>
 <%= form_for(@wishlist) do |f| %> 
   <div >
+  <%= f.file_field :images, multiple: true %>
+
     <%= f.label :name %>
     <%= f.text_field :name%>
+
+    <%= f.label :description %>
+    <%= f.text_field :description%>
+
 
   </div><br>
 
