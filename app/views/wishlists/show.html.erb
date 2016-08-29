@@ -1,4 +1,11 @@
-<h2>Wishlist page</h2>
 
-<h3>Picture</h3> 
-<h3>Wishlist title: </h3>
+<h2><%= @wishlist.name %></h2>
+<br>
+
+<%= image_tag (@wishlist.avatar) %> <br>
+<%= @wishlist.name %>  <br>
+<%= @wishlist.description %> <br>
+
+
+
+<%= link_to 'Back', wishlists_path %><br>

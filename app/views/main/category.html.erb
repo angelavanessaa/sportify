@@ -1,0 +1,8 @@
+<a href="/">Home</a><br><br>
+
+<h1><%= @categories.name %></h1><br>
+<% @categories.products.all.each do |x| %>
+	<%= x.name %><br>
+	<%= x.description %><br>
+	<%= image_tag (x.avatars[0]) %><br><br>
+<% end %>

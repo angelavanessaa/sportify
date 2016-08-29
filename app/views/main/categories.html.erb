@@ -1,0 +1,16 @@
+<a href="/">Home</a><br><br>
+
+<% Category.all.each do |x| %>
+	<%= x.name %><br>
+		<% x.products.all.each do |y| %>
+			<% if y.posts.present? %>
+				<%= y.name %><br>
+				<%= y.description %><br>
+					<% y.posts.all.each do |z| %>
+						<%= z.start_date %><br>
+						<%= z.end_date %><br>
+						<%= z.price %><br><br>
+					<% end %>
+			<% end %>
+		<% end %>
+<% end %>
