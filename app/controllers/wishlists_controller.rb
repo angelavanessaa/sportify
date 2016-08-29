@@ -27,6 +27,10 @@ class WishlistsController < ApplicationController
 		redirect_to wishlists_path
 	end
 
+	def wishlist_vote
+		votes.count(:conditions => "value = 1")
+	end 
+
 	private 
 	def wishlist_params
 		params.require(:wishlist).permit(:name, :votes_count, :desription, {avatar: []})

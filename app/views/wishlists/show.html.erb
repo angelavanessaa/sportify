@@ -5,7 +5,8 @@
 <%= image_tag (@wishlist.avatar) %> <br>
 <%= @wishlist.name %>  <br>
 <%= @wishlist.description %> <br>
+<h4>CURRENT VOTES: <%= @wishlist.votes_count %>  </h4> 
 
-
+<%= button_to 'vote', wishlist_votes_path(@wishlist) %><br>
 
 <%= link_to 'Back', wishlists_path %><br>
