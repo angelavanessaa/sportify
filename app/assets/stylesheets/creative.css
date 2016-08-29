@@ -173,6 +173,7 @@ header {
   background-image: url('header.jpg');
   text-align: center;
   color: white;
+  margin-top: 0;
 }
 header .header-content {
   position: relative;
