@@ -432,6 +432,10 @@ body {
   webkit-tap-highlight-color: #222222;
 }
 
+.well {
+  display: block;
+
+
 #custom {
   color: #F05F40;
   background-color: white;

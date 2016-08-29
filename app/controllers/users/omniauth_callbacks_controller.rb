@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-<<<<<<< HEAD
+
   def facebook
     # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.from_omniauth(request.env["omniauth.auth"])
@@ -17,7 +17,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to root_path
   end
 end
-=======
+
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 
@@ -44,5 +44,3 @@ end
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
-end
->>>>>>> 09715cd7a14ea6abe05db6aa63bc0d660917c6b0
