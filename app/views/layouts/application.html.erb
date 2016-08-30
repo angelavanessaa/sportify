@@ -6,77 +6,93 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/shop-homepage.css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Theme CSS -->
-    <link href="css/creative.css" rel="stylesheet">
+  <!-- Theme CSS -->
+  <link href="css/creative.css" rel="stylesheet">
 
-    <!-- Devise CSS -->
-    <link href="css/devise.css" rel="stylesheet">
+  <!-- Devise CSS -->
+  <link href="css/devise.css" rel="stylesheet">
 
-    <!-- footer -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- footer -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
   <body id="page-top">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top effect-shadow " style="background-color:white;">
-        <div class="container-fluid border-bottom">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" style="color:gray;" href="/">Sportify</a>
-            </div>
-            <div>
-                <!-- <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                        <button type="submit" class="btn btn-primary btn-m page-scroll">Submit</button>
-                </form> -->
-            </div>
+      <div class="container-fluid border-bottom">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+              </button>
+              <a class="navbar-brand page-scroll" style="color:gray;" href="/">Sportify</a>
+          </div>
+          <div>
+              <!-- <form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                      <button type="submit" class="btn btn-primary btn-m page-scroll">Submit</button>
+              </form> -->
+          </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <%if signed_in? %>
+                <%if signed_in? %>
                     <li><a class="page-scroll" style="color:gray;"> Welcome <%=current_user.email%></li>
                     <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, style: 'color:gray;' , method: :delete %></li>
-                    <% else %>
-                    <li>
-                        <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
-                    </li>
-                    <%end%>
+                  <% elsif params[:controller] == "home" && params[:action] == "index" %>
+                          <li>
+                              <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
+                          </li>
+                          <li>
+                              <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
+                          </li>
+                      <% elsif params[:controller] == "users/sessions" && params[:action] == "new"%> 
+                      <li>
+                              <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
+                      </li>
+                      <% elsif params[:controller] == "users/registrations" && params[:action] == "new" %> 
+                
+                       <li>
+                              <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
+                      </li>
+               <%end%>
+               
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
 
-
+    <%if signed_in?%>
     <nav2 id="navbar">
       <ul>
-        <li><%= link_to "DEALS", user_posts_path(current_user) %></li>
-        <li><%= link_to "WISHLISTS", wishlists_path %></li>
+        <li><%= link_to "DEALS", user_posts_path(current_user) %> </li>  
+        <li><%= link_to "WISHLISTS", wishlists_path %></li>   
       </ul>
     </nav2>
+    <% end %>
 
         <!-- /.container-fluid -->
   </nav>
+
+
+
+
+                    
 
 
 
@@ -106,8 +122,11 @@
 
 <footer>
     <div class="footer" id="footer" style="">
+    
         <div class="container">
+        
             <div class="row">
+            <div class= "adjust-footer-container">
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> Lorem Ipsum </h3>
                     <ul>
@@ -165,6 +184,7 @@
             </div>
             <!--/.row--> 
         </div>
+    </div>
         <!--/.container--> 
     </div>
     <!--/.footer-->

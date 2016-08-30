@@ -30,62 +30,52 @@
                     <!-- <h2 class="section-heading">We've got what you need!</h2> -->
          <!--            <a class="btn-5" href="#">Slice</a> -->
 
-                <a href="/categories" class="btn" id="custom" style="text-decoration: none;">SEE ALL CATEGORIES</a>
+               <!--  <a href="/categories" class="btn" id="custom" style="text-decoration: none;">SEE ALL CATEGORIES</a>
                     <hr class="light">
-                <a href="/deals" class="btn" id="custom" style="text-decoration: none;">SEE ALL DEALS</a>
+                <a href="/deals" class="btn" id="custom" style="text-decoration: none;">SEE ALL DEALS</a> -->
 
                 </div>
             </div>
         </div>
-    </section> -->
+    </section> 
 
 
-
+ <div class= "adjust-carousel">
      <section class="no-padding" id="portfolio">
-    <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12 text-center">
-
-                    <h2 class="section-heading">Product Category</h2>
-
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3>Buy Buy Buy!</h3>
-                        <p class="text-muted">Give us all your money!</p>
+             <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
+                            <h3>Buy Buy Buy!</h3>
+                            <p class="text-muted">Give us all your money!</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Wishlist</h3>
-                        <p class="text-muted">You can bla bla bla.</p>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
+                            <h3>Wishlist</h3>
+                            <p class="text-muted">You can bla bla bla.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                        <h3>Cheap!</h3>
-                        <p class="text-muted">We get our stuff in bulk from manufacturers.</p>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
+                            <h3>Cheap!</h3>
+                            <p class="text-muted">We get our stuff in bulk from manufacturers.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>Wait until you're old!</h3>
-                        <p class="text-muted">Need to wait for the votes.lulz</p>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
+                            <h3>Wait until you're old!</h3>
+                            <p class="text-muted">Need to wait for the votes.lulz</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
+ </div>
 
     <section class="no-padding" id="portfolio">
         <div class="container-fluid">
@@ -280,11 +270,3 @@
     </section>
 </body>
 
-<% if current_user %>
-	<%= current_user.name %>
-<% end%>
-
-
-Top Picks
-
-<%= Product.order(:vote_count).limit(10) %>
