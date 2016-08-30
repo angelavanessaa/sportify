@@ -51,10 +51,26 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                <%if signed_in? %>
-                    <li><a class="page-scroll" style="color:gray;"> Welcome <%=current_user.email%></li>
+
+                    <%if signed_in? %>
+
+                    
+                    <li><a class="page-scroll"><%= link_to "Welcome <%= current_user.email %>", user_path(current_user), style: 'color:gray' %><%= current_user.email %></li>
+
+            
+
                     <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, style: 'color:gray;' , method: :delete %></li>
-                  <% elsif params[:controller] == "home" && params[:action] == "index" %>
+
+                    <% else %>
+                    <li>
+                        <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path, style: 'color:gray' %></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" ><%=link_to "Login", new_user_session_path, style: 'color:gray' %></a>
+                    </li>
+                    <%end%>
+
+                  <% if params[:controller] == "home" && params[:action] == "index" %>
                           <li>
                               <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
                           </li>
@@ -65,13 +81,13 @@
                       <li>
                               <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
                       </li>
-                      <% elsif params[:controller] == "users/registrations" && params[:action] == "new" %> 
+                      <% else params[:controller] == "users/registrations" && params[:action] == "new" %> 
                 
                        <li>
                               <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
                       </li>
                <%end%>
-               
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -80,8 +96,12 @@
     <%if signed_in?%>
     <nav2 id="navbar">
       <ul>
+
+        <li>"DEALS"</li>
+
         <li><%= link_to "DEALS", user_posts_path(current_user) %> </li>  
         <li><%= link_to "WISHLISTS", wishlists_path %></li>   
+
       </ul>
     </nav2>
     <% end %>
