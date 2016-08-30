@@ -46,3 +46,8 @@ h2 {
     background: #007299;
     box-shadow: none;
 }
+
+.fb, a:link, a:visited {
+  text-decoration: underline;
+  color:white;
+}

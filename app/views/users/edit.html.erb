@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Edit', edit_user_path(@user.id), method: :get %> |
-<%= link_to 'Back', user_path(@user.id) %>
+<%= link_to 'Edit', edit_user_path(current_user), method: :get %> |
+<%= link_to 'Back', user_path(current_user) %>
