@@ -91,7 +91,11 @@
 .snip1423.hover i {
   background-color: #2980b9;
 }
-/* Demo purposes only */
-body {
-  background-color: #212121;
+
+
+.centering {
+    padding-top: 60px;
+    padding-left: 130px;
+    padding-bottom: 900px;
+    background-color: #f3f3f3;
 }

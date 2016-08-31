@@ -1,7 +1,6 @@
 .row {
   display: block;
   position: relative;
-  top: 80px;
 }
 
 .fb-button {
@@ -45,4 +44,9 @@ h2 {
 .btn-primary:active, .btn-primary.active {
     background: #007299;
     box-shadow: none;
+}
+
+.fb, a:link, a:visited {
+  text-decoration: underline;
+  color:white;
 }
