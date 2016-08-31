@@ -1,13 +1,12 @@
-<a href="/admin">Admin Page</a><br>
-
-Post start date: <%= @posts.start_date %><br>
-Post end date: <%= @posts.start_date %><br>
+<br><br>
+Deal start date: <%= @posts.start_date %><br>
+Deal end date: <%= @posts.start_date %><br>
 Selling price: RM.<%= @posts.price %><br><br>
 Product being sold:<br>
 <% @products = @posts.product_id %>
 <% @info = Product.find(@products) %>
 <%= link_to "#{@info.name}", category_product_path(@info.category_id, @info.id) %><br>
 <%= @info.description %><br>
-
-<%= button_to "Edit Deal", edit_category_product_post_path, :method => :get %>
-<%= button_to "Delete Deal", category_product_post_path(:category, :product, @posts), :method => :delete %>
+<% if @info.avatar_file_name.present? %>
+<%= image_tag @info.avatar.url %>
+<% end %>
