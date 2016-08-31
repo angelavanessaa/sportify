@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :lockable, :timeoutable, :omniauthable, :omniauth_providers => [:facebook]
          #:confirmable, 
          #:omniauthable
-  has_attached_file :avatar, styles: { small: "150x150", medium: "300x300", thumb: "100x100#" }
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
 	  def self.from_omniauth(auth)
 	    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

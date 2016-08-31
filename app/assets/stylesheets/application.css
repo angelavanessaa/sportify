@@ -14,9 +14,6 @@
  *= require_self
  */
 
-
-
-
 .full {
   width: 100%;
 }
@@ -34,11 +31,6 @@
 	width: 100%;
 	border-bottom: 1px solid #CCCCCC;
 	border-top: 1px solid #DDDDDD;
-
-
-    margin-top: 100px;  negative value of footer height 
-    height: 100px;
-    clear: both;
 }
 .footer p {
 	margin: 0;
