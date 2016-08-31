@@ -1,5 +1,8 @@
 
 <h2>Wish list</h2>
+
+
+
 <table>
 	<tr>
 		<th>Title</th>
@@ -7,13 +10,14 @@
 	</tr>
 	<% @wishlists.each do |t| %> 
 	<tr>
+		<td><%= image_tag t.avatar (:medium) %></td>
 		<td><%= t.name %></td>
 		<td><%= t.user.email if t.user %></td>
-		<td><%= link_to "View wishlist", wishlist_path(t.id) %><br></td>
+		<td><%= link_to "View", wishlist_path(t.id) %><br></td>
 	</tr>
 	<% end %>
 </table>
 
-
-<h3><%= link_to "Create new wishlist", new_wishlist_path(@wishlist) %></h3>
-<%= link_to "Home", root_path %> 
+<h3>Don't see what you're looking for?</h3>
+<h3><%= link_to "Make a wish!", new_wishlist_path(@wishlist), style: 'color:gray'%> </h3>
+<%= link_to "Home", root_path,  style: 'color:gray' %> 
