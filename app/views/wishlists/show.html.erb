@@ -2,7 +2,7 @@
 <h2><%= @wishlist.name %></h2>
 <br>
 
-<%= image_tag @wishlist.avatar (:medium) %> <br>
+<%= image_tag (@wishlist.avatar) %> <br>
 <%= @wishlist.name %>  <br>
 <%= @wishlist.description %> <br>
 <h4>CURRENT VOTES: <%= @wishlist.votes_count %>  </h4> 
