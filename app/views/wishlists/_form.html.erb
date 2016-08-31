@@ -1,17 +1,20 @@
 <br>
 <div>
-<%= form_for(@wishlist) do |f| %> 
+<%= form_for @wishlist, url: wishlists_path, html: {multipart: true} do |f| %> 
+
   <div >
  
 
     <%= f.label :name %>
     <%= f.text_field :name%><br>
 
+    
+    <%= f.file_field :avatar %>
+
     <%= f.label :description %>
     <%= f.text_field :description%>
 
- <%= f.file_field :images, multiple: true %>
- byebug
+
   </div><br>
 
 

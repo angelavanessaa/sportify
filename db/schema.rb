@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160829030547) do
+=======
+ActiveRecord::Schema.define(version: 20160829030550) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,6 +119,7 @@ ActiveRecord::Schema.define(version: 20160829030547) do
     t.datetime "updated_at",                             null: false
     t.string   "provider"
     t.string   "uid"
+    t.boolean  "admin",                  default: false
     t.string   "name"
     t.boolean  "admin",                  default: false
     t.string   "avatar_file_name"
@@ -140,12 +145,15 @@ ActiveRecord::Schema.define(version: 20160829030547) do
   add_index "votes", ["wishlist_id"], name: "index_votes_on_wishlist_id", using: :btree
 
   create_table "wishlists", force: :cascade do |t|
-    t.string  "name"
-    t.integer "user_id"
-    t.integer "product_id"
-    t.integer "votes_count", default: 0
-    t.string  "avatar"
-    t.string  "description"
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.integer  "votes_count",         default: 0
+    t.string   "description"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_foreign_key "chatboxes", "users"

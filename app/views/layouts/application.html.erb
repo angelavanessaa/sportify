@@ -36,6 +36,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
                 <%if signed_in? %>
                     <li><a class="page-scroll" style="color:gray; , padding: 0 2em;, line-height: 3em;" > Welcome <%=current_user.email%></li>
                     <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, style: 'color:gray;' , method: :delete %></li>
@@ -57,6 +58,28 @@
                       </li>
                <%end%>
                
+=======
+
+                    <%if signed_in? %>
+
+                    
+                    <li><a class="page-scroll"><%= link_to "Welcome", user_path(current_user), style: 'color:gray' %><%= current_user.email %></li>
+
+            
+
+                    <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, style: 'color:gray;' , method: :delete %></li>
+
+                    <% else %>
+                    <li>
+                        <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path, style: 'color:gray' %></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" ><%=link_to "Login", new_user_session_path, style: 'color:gray' %></a>
+                    </li>
+                    <%end%>
+
+
+>>>>>>> master
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -97,7 +120,12 @@
 
 
 
+<<<<<<< HEAD
 
+=======
+<%= yield %>
+</body>
+>>>>>>> master
 
 <footer>
     <div>
@@ -184,5 +212,16 @@
             </div>
       
 </footer>
+<<<<<<< HEAD
 </body>
+=======
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+>>>>>>> master
 </html>
