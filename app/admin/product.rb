@@ -1,15 +1,14 @@
 ActiveAdmin.register Product do
+permit_params :category_id, :name, :description, :avatar
 	form :html => { :enctype => "multipart/form-data" } do |f|
 	  f.inputs "Product", :multipart => true do
 	  	f.input :category
 	    f.input :name
 	    f.input :description
-	    f.input :image, :required => false, :as => :file
+	    f.input :avatar, :required => false, :as => :file, :hint => f.template.image_tag(f.object.avatar.url(:thumb))
 	  end
 	  f.actions
 	end
-
-permit_params :category_id, :name, :description, :avatar
 
 	index do
 	  id_column
@@ -25,8 +24,9 @@ show do |product|
   	row :category
   	row :name
   	row :description
-		row "Image" do
-				image_tag (product.avatar.url(:thumb))
+		row :avatar do
+				# image_tag (product.avatar.url(:thumb))
+				image_tag(product.avatar.url(:thumb))
     	end
     row :created_at
     row :updated_at

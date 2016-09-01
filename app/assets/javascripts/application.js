@@ -731,8 +731,6 @@ $(document).ready(function() {
 });
 
 
-
-
 // footer
 
 $(window).scroll(function(){
