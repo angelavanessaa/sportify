@@ -5,14 +5,14 @@
 		<% @wishlists.each do |x| %>
 			 <%= link_to wishlist_path(current_user) do %>
 						<figure class="snip1423"><%= image_tag x.avatar %>
-							  <figcaption>
-					  			<h3><%= x.name %><h3>
+							  <figcaption style= "height: 200px">
+					  			<h3 style= "margin: 20px"><%= x.name %><h3>
 					  			<p><%= x.description %></p>
 					  			<div class="price">
-					  			<s><%=x.votes.count%></s>
+					  			<p> Votes: <%=x.votes.count%></p>
 					  				
 			  					</div>
-			  				</figcaption><i class="ion-android-cart"></i>
+			  				</figcaption>
 						</figure>
 
 			<%end%>
@@ -23,21 +23,15 @@
 
 	<a href="/wishlists/new">
 		<figure class="snip1423">
-			<%= image_tag('plus.jpg') %>
-			 	<figcaption>
+			<div><%= image_tag('plus.jpg')%></div>
+			 	<figcaption style= "height: 200px">
 					<br><br>
 					<h3>Create New Wishlist</h3>
-					<div class="price">
-					
-						
-					</div>
-				</figcaption><i class="ion-android-cart"></i>
+					<div class="price"></div>
+				</figcaption>
 
 		</figure>
 	</a>
-			
-
-
 </div>
 
         

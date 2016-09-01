@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bar
+//= require menu-bar
 //= require bootstrap
 //= require bootstrap.min
 //= require timer
