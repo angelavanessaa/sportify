@@ -11,13 +11,13 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show]
   end
 
-  # resources :users do  
-  #   resources :categories do
-  #     resources :products do
-  #       resources :posts, only: [:index, :show]
-  #     end
-  #   end
-  # end
+  resources :users do  
+    resources :categories do
+      resources :products do
+        resources :posts, only: [:index, :show]
+      end
+    end
+  end
 
   
 

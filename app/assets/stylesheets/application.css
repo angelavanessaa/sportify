@@ -10,23 +10,31 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require_active_admin
+ *= require_application
+ *= require_bootstrap
+ *= require_bootstrap.min
+ *= require_creative
+ *= require_devise
+ *= require_portfolio-item
+ *= require_posts
+ *= require_showpage_description
  *= require_self
+ *= require_tree .
  */
-
 .full {
-    width: 100%;	
+  width: 100%;
 }
 .gap {
-	height: 30px;
-	width: 100%;
-	clear: both;
-	display: block;
+    height: 30px;
+    width: 100%;
+    clear: both;
+    display: block;
 }
 .footer {
 	background: #EDEFF1;
 	height: auto;
-	padding-bottom: 30px;
+/*	padding-bottom: 30px;*/
 	position: relative;
 	width: 100%;
 	border-bottom: 1px solid #CCCCCC;
@@ -155,12 +163,15 @@
 	color:gray;
 }
 
-.adjust-footer-container {
-	margin-bottom: 400px;
-	margin-top: -130px;
+.link2 {
+    display: inline-block;
+    padding: 0 7em;
+    line-height: 3em;
 }
 
-.fb, a:link, a:visited {
-    text-decoration: underline;
-    color: black;
+.effect-shadow {
+	box-shadow: 0 10px -6px #777
 }
+
+
+    

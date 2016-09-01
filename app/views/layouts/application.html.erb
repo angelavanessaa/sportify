@@ -28,7 +28,7 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
-  <body id="page-top" style="padding-top: 90px;">
+  <body id="page-top" >
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top effect-shadow " style="background-color:white;">
       <div class="container-fluid border-bottom">
@@ -52,14 +52,14 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                 <%if signed_in? %>
-                    <li><a class="page-scroll" style="color:gray;"> Welcome <%=current_user.email%></li>
+                    <li><a class="page-scroll" style="color:gray; , padding: 0 2em;, line-height: 3em;" > Welcome <%=current_user.email%></li>
                     <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, style: 'color:gray;' , method: :delete %></li>
                   <% elsif params[:controller] == "home" && params[:action] == "index" %>
                           <li>
-                              <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
+                              <a class="page-scroll" style="color:gray;"><%=link_to "Login" , new_user_session_path %></a>
                           </li>
                           <li>
-                              <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
+                              <a class="page-scroll" style="color:gray;"><%=link_to "Sign up", new_user_registration_path %></a>
                           </li>
                       <% elsif params[:controller] == "users/sessions" && params[:action] == "new"%> 
                       <li>
@@ -78,10 +78,12 @@
         </div>
 
     <%if signed_in?%>
-    <nav2 id="navbar">
+    <nav2 id="navbar" class="effect-shadow">
       <ul>
-        <li><%= link_to "DEALS", user_posts_path(current_user) %> </li>  
-        <li><%= link_to "WISHLISTS", wishlists_path %></li>   
+        <% if current_user %>
+          <li class= link2 ><%= link_to "DEALS", user_posts_path(current_user.id) %></li>
+          <li class= link2><%= link_to "WISHLISTS", wishlists_path %></li>
+        <% end %>
       </ul>
     </nav2>
     <% end %>
@@ -99,117 +101,103 @@
 
 
 
- <!--    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
-                    <hr class="light">
-                    <p class="text-faded">#</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
-
-
-    <!-- Navigation -->
  
 
 <%= yield %>
 
 
+
+
+
+
+
+
+
+
 <footer>
-    <div class="footer" id="footer" style="">
-    
-        <div class="container">
+    <div>
+        <div class="footer" id="footer">
         
+            <div class="container">
+            
             <div class="row">
-            <div class= "adjust-footer-container">
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> Lorem Ipsum </h3>
-                    <ul>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                    </ul>
+                <div class= "adjust-footer-container">
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                        <h3> Lorem Ipsum </h3>
+                        <ul>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                        <h3> Lorem Ipsum </h3>
+                        <ul>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                        <h3> Lorem Ipsum </h3>
+                        <ul>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                        <h3> Lorem Ipsum </h3>
+                        <ul>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                        <h3> Lorem Ipsum </h3>
+                        <ul>
+                            <li>
+                                <div class="input-append newsletter-box text-center">
+                                    <input type="text" class="full text-center" placeholder="Email ">
+                                    <button class="btn  bg-gray" type="button"> Lorem ipsum <i class="fa fa-long-arrow-right"> </i> </button>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="social">
+                            <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> Lorem Ipsum </h3>
-                    <ul>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> Lorem Ipsum </h3>
-                    <ul>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> Lorem Ipsum </h3>
-                    <ul>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                        <li> <a href="#"> Lorem Ipsum </a> </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
-                    <h3> Lorem Ipsum </h3>
-                    <ul>
-                        <li>
-                            <div class="input-append newsletter-box text-center">
-                                <input type="text" class="full text-center" placeholder="Email ">
-                                <button class="btn  bg-gray" type="button"> Lorem ipsum <i class="fa fa-long-arrow-right"> </i> </button>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="social">
-                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
-                    </ul>
-                </div>
+                <!--/.row--> 
             </div>
-            <!--/.row--> 
         </div>
-    </div>
         <!--/.container--> 
     </div>
     <!--/.footer-->
-    
-    <div class="footer-bottom">
-        <div class="container">
-            <p class="pull-left"> Copyright © Footer E-commerce Plugin 2014. All right reserved. </p>
-            <div class="pull-right">
-                <ul class="nav nav-pills payments">
-                  <li><i class="fa fa-cc-visa"></i></li>
-                    <li><i class="fa fa-cc-mastercard"></i></li>
-                    <li><i class="fa fa-cc-amex"></i></li>
-                    <li><i class="fa fa-cc-paypal"></i></li>
-                </ul> 
+</div>    
+            <div class="footer-bottom">
+                <div class="container">
+                    <p class="pull-left"> Copyright © Footer E-commerce Plugin 2014. All right reserved. </p>
+                    <div class="pull-right">
+                        <ul class="nav nav-pills payments">
+                          <li><i class="fa fa-cc-visa"></i></li>
+                            <li><i class="fa fa-cc-mastercard"></i></li>
+                            <li><i class="fa fa-cc-amex"></i></li>
+                            <li><i class="fa fa-cc-paypal"></i></li>
+                        </ul> 
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <!--/.footer-bottom--> 
+      
 </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
 </body>
 </html>

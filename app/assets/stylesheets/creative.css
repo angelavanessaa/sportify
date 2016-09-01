@@ -3,6 +3,8 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+
+
 .carousel {
   width:800px;
   height: 300px;
@@ -432,13 +434,3 @@ body {
   webkit-tap-highlight-color: #222222;
 }
 
-.well {
-  display: block;
-
-
-#custom {
-  color: #F05F40;
-  background-color: white;
-  border-radius: 0px;
-  width: 200px;
-}

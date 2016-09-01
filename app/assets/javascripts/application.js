@@ -12,9 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bar
+//= require bootstrap
+//= require bootstrap.min
+//= require timer
 //= require turbolinks
 //= require_tree .
-
 
 
 (function($) {
@@ -730,4 +733,30 @@ $(document).ready(function() {
   var carousel = $('.carousel').waterwheelCarousel();
 });
 
->>>>>>> master
+
+// footer
+
+$(window).scroll(function(){
+  //Header
+  if($(window).scrollTop()>= 100){
+     $('.header').addClass('fixed-top');
+  }
+  else {
+  	$('.header').removeClass('fixed-top');
+  }
+  //Footer
+    var navpanel = $('.bottom-nav');
+    var panelHeight = navpanel.height() - 4;
+    var footerHeight = $('.footer').height();
+    if( $(document).height() - panelHeight - footerHeight <= $(window).scrollTop() + $(window).height() ) {
+      navpanel.removeClass('fixed-bottom');
+    } 
+  else {
+    navpanel.addClass('fixed-bottom');
+	}
+  
+});
+
+ 
+
+

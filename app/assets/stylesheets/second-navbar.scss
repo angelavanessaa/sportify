@@ -1,0 +1,61 @@
+$nav-height: em;
+$nav-color: #bbb;
+$nav-background: #0DA2D4;
+
+
+.navbar-fixed {
+  position: fixed;
+  top: -($nav-height);
+}
+
+
+/*----------------------
+  $NAVBAR
+    basic navbar styling
+  ----------------------*/
+
+nav2 {
+  width: 100%;
+  color: $nav-color;
+  background: $nav-background;
+  font-weight: bold;
+  letter-spacing: 0.025em;
+}
+
+nav2 ul {
+  text-align: center;
+  margin: 0;
+}
+
+nav2 ul li {
+ display: inline-block;
+ padding: 0 3em;
+ line-height: 3em;
+}
+
+nav2 ul li:hover {
+  background: #00939C;
+}
+
+
+/*----------------------
+  $BODY
+  ----------------------*/
+
+/*----------------------
+  $MISC
+  ----------------------*/
+
+.filler {
+  width: 1px;
+  height: 200px;
+}
+
+.two {
+  height: 3000px;
+}
+
+.fb, a:link, a:visited {
+    text-decoration: underline;
+    color: #777;
+}
