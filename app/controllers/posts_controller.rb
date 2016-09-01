@@ -50,9 +50,6 @@ class PostsController < ApplicationController
 
     @post.save
 
-
-
-    # redirect_to "/users/<%=current_user.id%>/posts/<%=@post.id %>/?percent_bar='#{@percent_bar}'"
     redirect_to user_post_path(current_user, @post)
   end
 
