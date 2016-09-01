@@ -53,25 +53,24 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                 <%if signed_in? %>
-                    <li><a class="page-scroll" style="color:gray; , padding: 0 2em;, line-height: 3em;" > Welcome <%=current_user.email%></li>
-                    <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, style: 'color:gray;' , method: :delete %></li>
-                  <% elsif params[:controller] == "home" && params[:action] == "index" %>
-                          <li>
-                              <a class="page-scroll" style="color:gray;"><%=link_to "Login" , new_user_session_path %></a>
-                          </li>
-                          <li>
-                              <a class="page-scroll" style="color:gray;"><%=link_to "Sign up", new_user_registration_path %></a>
-                          </li>
-                      <% elsif params[:controller] == "users/sessions" && params[:action] == "new"%> 
-                      <li>
-                              <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
-                      </li>
-                      <% elsif params[:controller] == "users/registrations" && params[:action] == "new" %> 
-                
-                       <li>
-                              <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
-                      </li>
-               <%end%>
+                  <li><a class="page-scroll" style="color:gray; , padding: 0 2em;, line-height: 3em;" > Welcome <%=current_user.email%></li>
+                  <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, style: 'color:gray;' , method: :delete %></li>
+                <% elsif params[:controller] == "home" && params[:action] == "index" %>
+                  <li>
+                    <a class="page-scroll"><%=link_to "Login" , new_user_session_path %></a>
+                  </li>
+                  <li>
+                    <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
+                  </li>
+                <% elsif params[:controller] == "users/sessions" && params[:action] == "new"%> 
+                  <li>
+                      <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
+                  </li>
+                <% elsif params[:controller] == "users/registrations" && params[:action] == "new" %> 
+                   <li>
+                      <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
+                  </li>
+                <%end%>
                
                 </ul>
             </div>
@@ -187,7 +186,7 @@
 </div>    
             <div class="footer-bottom">
                 <div class="container">
-                    <p class="pull-left"> Copyright © Footer E-commerce Plugin 2014. All right reserved. </p>
+                    <p class="pull-left"> Copyright © Footer E-commerce Plugin 2016. All rights reserved. </p>
                     <div class="pull-right">
                         <ul class="nav nav-pills payments">
                           <li><i class="fa fa-cc-visa"></i></li>

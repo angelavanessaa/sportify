@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.references :chatbox, index: true
       t.references :vote, index: true
       t.integer :price
+    
 
       t.timestamps null: false
     end

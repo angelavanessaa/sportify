@@ -1,5 +1,11 @@
 class AddAvatarToWishlists < ActiveRecord::Migration
-  def change
-    add_column :wishlists, :avatar, :string
-  end
+
+	  def self.up
+	    add_attachment :wishlists, :avatar
+	  end
+
+	  def self.down
+	    remove_attachment :wishlists, :avatar
+	  end
+
 end

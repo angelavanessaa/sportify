@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829030547) do
+ActiveRecord::Schema.define(version: 20160901081724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,8 +71,9 @@ ActiveRecord::Schema.define(version: 20160829030547) do
     t.integer  "chatbox_id"
     t.integer  "vote_id"
     t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "purchase_count", default: 0
   end
 
   add_index "posts", ["chatbox_id"], name: "index_posts_on_chatbox_id", using: :btree
@@ -115,9 +116,8 @@ ActiveRecord::Schema.define(version: 20160829030547) do
     t.datetime "updated_at",                             null: false
     t.string   "provider"
     t.string   "uid"
-    t.string   "name"
-    t.string   "image"
     t.boolean  "admin",                  default: false
+    t.string   "name"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -137,12 +137,15 @@ ActiveRecord::Schema.define(version: 20160829030547) do
   add_index "votes", ["wishlist_id"], name: "index_votes_on_wishlist_id", using: :btree
 
   create_table "wishlists", force: :cascade do |t|
-    t.string  "name"
-    t.integer "user_id"
-    t.integer "product_id"
-    t.integer "votes_count", default: 0
-    t.string  "avatar"
-    t.string  "description"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.integer  "target_votes",        default: 0
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_foreign_key "chatboxes", "users"

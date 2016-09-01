@@ -19,8 +19,8 @@
  *= require_portfolio-item
  *= require_posts
  *= require_showpage_description
- *= require_self
  *= require_tree .
+ x`*= require_self
  */
 .full {
   width: 100%;
@@ -175,3 +175,6 @@
 
 
     
+.navbar-default .nav > li > a, .navbar-default .nav > li > a:focus{
+	color: grey;
+}
