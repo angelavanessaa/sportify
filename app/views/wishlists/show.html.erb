@@ -6,7 +6,7 @@
 <%= @wishlist.name %>  <br>
 <%= @wishlist.description %> <br>
 <h4>CURRENT VOTES: <%= @wishlist.target_votes %>  </h4> 
-<%= image_tag(@wishlist.avatar(:medium)) %>
+<%= image_tag @wishlist.avatar.url(:medium) %>
 <div class="container">
   <h2>Progress Bar for Vote Target</h2>
   <p>You need to get 10 votes for this wish to be granted</p>
