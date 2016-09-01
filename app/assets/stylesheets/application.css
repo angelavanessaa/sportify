@@ -159,3 +159,8 @@
 	margin-bottom: 400px;
 	margin-top: -130px;
 }
+
+.fb, a:link, a:visited {
+    text-decoration: underline;
+    color: black;
+}
