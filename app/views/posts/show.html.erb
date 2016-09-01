@@ -1,12 +1,128 @@
-<br><br>
-Deal start date: <%= @posts.start_date %><br>
-Deal end date: <%= @posts.start_date %><br>
-Selling price: RM.<%= @posts.price %><br><br>
-Product being sold:<br>
-<% @products = @posts.product_id %>
-<% @info = Product.find(@products) %>
-<%= link_to "#{@info.name}", category_product_path(@info.category_id, @info.id) %><br>
-<%= @info.description %><br>
-<% if @info.avatar_file_name.present? %>
-<%= image_tag @info.avatar.url %>
-<% end %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Portfolio Item - Start Bootstrap Template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/portfolio-item.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Page Content -->
+  <div class= "adjust_whole">
+    <div class="container">
+        <!-- Portfolio Item Heading -->
+        <div class="row" style="margin-top: 80px;">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+               
+                    <small><%=@post.product.name%></small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Portfolio Item Row -->
+        <div class="row" id="countdown-timer" data-countdown="<%=@dayday %>">
+            <div class="col-md-5">
+                <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+            </div>
+           
+                <div class="row1">
+                    <h3>Time Remaining:</h3>
+                    <div id="timer">
+        
+                      <span id="days"></span>days
+                      <span id="hours"></span>hours
+                      <span id="minutes"></span>minutes
+                      <span id="seconds"></span>seconds
+                    </div>
+                    <div>
+                        <h3>Price</h3>
+                   
+                        <h3 class= "price">RM <%= @post.price%></h3>
+                    </div> 
+                </div>           
+        </div><br>
+        <div class= "margin-fix">
+            <div class="skillbar clearfix " data-percent="65%">
+                <div class="skillbar-title" style="background: #88cd2a;"><span>HTML5</span></div>
+                <div class="skillbar-bar" style="background: #88cd2a;"></div>
+                <div class="skill-bar-percent">65%</div>
+            </div>
+        </div>
+        <div>
+            <div class="tabs">
+              <div class="tab-2">
+                <label for="tab2-1">Product Description</label>
+                <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+                <div>
+                
+                  <%= @post.product.description%>
+                </div>
+              </div>
+              <div class="tab-2">
+                <label for="tab2-2">Discussion</label>
+                <input id="tab2-2" name="tabs-two" type="radio">
+                <div>
+                  
+                </div>
+              </div>
+            </div>
+                
+        </div>
+        <!-- /.row -->
+        <!-- Related Projects Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Related Projects</h3>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2016</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+  </div>
+    <!-- /.container -->
+   
+</body>
+</html>

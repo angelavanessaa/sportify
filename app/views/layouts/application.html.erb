@@ -1,44 +1,52 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-          <title>Sportify</title>
-          <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-          <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-          <%= csrf_meta_tags %>
-            <meta charset="utf-8">
-              <meta http-equiv="X-UA-Compatible" content="IE=edge">
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              <meta name="description" content="">
-              <meta name="author" content="">
+<html>
+<head>
+  <title>Sportify</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-              <!-- footer -->
-              <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-                <!-- jQuery -->
-            <script src="js/jquery.js"></script>
+  <!-- Custom CSS -->
+  <link href="css/shop-homepage.css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-            <!-- Bootstrap Core JavaScript -->
-            <script src="js/bootstrap.min.js"></script>
+  <!-- Theme CSS -->
+  <link href="css/creative.css" rel="stylesheet">
 
-            <!-- w3schools -->
-            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Devise CSS -->
+  <link href="css/devise.css" rel="stylesheet">
 
+  <!-- footer -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-        </head>
+</head>
+  <body id="page-top" >
 
-  <body id="page-top" style= "padding-top: 50px;" >
-
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top " style="background-color:white;" >
-        <div class="container-fluid border-bottom">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header" >
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" style="color:gray;" href="/">Sportify</a>
-            </div>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top effect-shadow " style="background-color:white;">
+      <div class="container-fluid border-bottom">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+              </button>
+              <a class="navbar-brand page-scroll" style="color:gray;" href="/">Sportify</a>
+          </div>
+          <div>
+              <!-- <form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                      <button type="submit" class="btn btn-primary btn-m page-scroll">Submit</button>
+              </form> -->
+          </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -48,10 +56,10 @@
                     <li><a class="page-scroll"><%=link_to 'Sign out', destroy_user_session_path, style: 'color:gray;' , method: :delete %></li>
                   <% elsif params[:controller] == "home" && params[:action] == "index" %>
                           <li>
-                              <a class="page-scroll" ><%=link_to "Login", new_user_session_path %></a>
+                              <a class="page-scroll" style="color:gray;"><%=link_to "Login" , new_user_session_path %></a>
                           </li>
                           <li>
-                              <a class="page-scroll"><%=link_to "Sign up", new_user_registration_path %></a>
+                              <a class="page-scroll" style="color:gray;"><%=link_to "Sign up", new_user_registration_path %></a>
                           </li>
                       <% elsif params[:controller] == "users/sessions" && params[:action] == "new"%> 
                       <li>

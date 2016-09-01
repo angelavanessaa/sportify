@@ -10,10 +10,18 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require_active_admin
+ *= require_application
+ *= require_bootstrap
+ *= require_bootstrap.min
+ *= require_creative
+ *= require_devise
+ *= require_portfolio-item
+ *= require_posts
+ *= require_showpage_description
  *= require_self
+ *= require_tree .
  */
-
 .full {
   width: 100%;
 }
@@ -164,3 +172,6 @@
 .effect-shadow {
 	box-shadow: 0 10px -6px #777
 }
+
+
+    

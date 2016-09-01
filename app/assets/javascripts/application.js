@@ -12,9 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bar
+//= require bootstrap
+//= require bootstrap.min
+//= require timer
 //= require turbolinks
 //= require_tree .
-
 
 
 (function($) {
