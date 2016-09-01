@@ -1,73 +1,24 @@
 <div class= "centering">
-	<figure class="snip1423">
-	  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample57.jpg" alt="sample57" />
-	  <figcaption>
-	    <h3>Pudol Doux</h3>
-	    <p>All this modern technology just makes people try to do everything at once.</p>
-	    <div class="price">
-	      <s>$24.00</s>$19.00
-	    </div>
-	  </figcaption><i class="ion-android-cart"></i>
-	  <a href="#"></a>
-	</figure>
-
-	<figure class="snip1423"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample90.jpg" alt="sample90" />
-	  <figcaption>
-	    <h3>Zosaisan Invec</h3>
-	    <p>Why should I have to work for everything? It's like saying that I don't deserve it.</p>
-	    <div class="price">
-	      <s>$35.00</s>$45.00
-	    </div>
-	  </figcaption><i class="ion-android-cart"></i>
-	  <a href="#"></a>
-	</figure>
-
-
-	<figure class="snip1423"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample90.jpg" alt="sample90" />
-	  <figcaption>
-	    <h3>Zosaisan Invec</h3>
-	    <p>Why should I have to work for everything? It's like saying that I don't deserve it.</p>
-	    <div class="price">
-	      <s>$35.00</s>$45.00
-	    </div>
-	  </figcaption><i class="ion-android-cart"></i>
-	  <a href="#"></a>
-	</figure>
-
-		<figure class="snip1423">
-	  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample57.jpg" alt="sample57" />
-	  <figcaption>
-	    <h3>Pudol Doux</h3>
-	    <p>All this modern technology just makes people try to do everything at once.</p>
-	    <div class="price">
-	      <s>$24.00</s>$19.00
-	    </div>
-	  </figcaption><i class="ion-android-cart"></i>
-	  <a href="#"></a>
-	</figure>
-
-	<figure class="snip1423"><img src="http://www.allouthire.co.uk/images/nike-free/Best-Sellers-Nike-Air-Max-2014-Men-Blue-Orange-Running-Shoes-5XEN4.jpg" alt="sample90" />
-	  <figcaption>
-	    <h3>Nike Air Max Running Shoes</h3>
-	    <p>Why should I have to work for everything? It's like saying that I don't deserve it.</p>
-	    <div class="price">
-	      <s>RM55.00</s>RM35.00
-	    </div>
-	  </figcaption><i class="ion-android-cart"></i>
-	  <a href="#"></a>
-	</figure>
-
-
-	<figure class="snip1423"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample90.jpg" alt="sample90" />
-	  <figcaption>
-	    <h3>Zosaisan Invec</h3>
-	    <p>Why should I have to work for everything? It's like saying that I don't deserve it.</p>
-	    <div class="price">
-	      <s>$35.00</s>$45.00
-	    </div>
-	  </figcaption><i class="ion-android-cart"></i>
-	  <a href="#"></a>
-	</figure>
+	<% @posts.each do |x| %>
+		<div class= "centering">
+		    <figure class="snip1423">
+		      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample57.jpg" alt="sample57" />
+		      <figcaption>
+		        <h3> 
+		             <%=x.product.name%>
+		        </h3>
+		        <p><%=x.product.description%></p>
+		        <div class="price">
+		          <s><%=x.price%></s><%=x.price%>
+		        </div>
+		        <div>
+		            <%=x.end_date%>
+		        </div>
+		      </figcaption><i class="ion-android-cart"></i>
+		      <a href="#"></a>
+		    </figure>
+		</div>
+	<% end %>
 </div>
 
 
