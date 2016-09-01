@@ -13,7 +13,6 @@ class WishlistsController < ApplicationController
 	end 
 
 	def create
-		byebug
 		@wishlist = current_user.wishlists.new(wishlist_params)
 
 		if @wishlist.save
