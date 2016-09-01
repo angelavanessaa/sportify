@@ -13,7 +13,9 @@ class WishlistsController < ApplicationController
 	end 
 
 	def create
+		byebug
 		@wishlist = current_user.wishlists.new(wishlist_params)
+
 		if @wishlist.save
 			redirect_to wishlist_path(@wishlist)
 		else
@@ -33,7 +35,7 @@ class WishlistsController < ApplicationController
 
 	private 
 	def wishlist_params
-		params.require(:wishlist).permit(:name, :votes_count, :desription, {avatar: []})
+		params.require(:wishlist).permit(:name, :description, :avatar)
 	end  
 
 	def set_wishlist
